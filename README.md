@@ -29,44 +29,14 @@ SQL = Structured Query Language , 구조화된 질의 언어 , 표준화된 문�
 ```
 
 
-```데이터베이스학습(mysql)
+데이터베이스학습(mysql)
 
 mysql 설치를 진행한다.
 https://dev.mysql.com/downloads/mysql (LTS 버전을 설치한다.)
-mysql-8.4.8-winx64
-agree후 custom 셋업 3306사용
-next inatal, 설치완료 P42 까지 완료
-초기설정 next 
-DB 데이터 저장 디렉토리 설정 (C:\ProgramData\MySQL\MySQL Server 8.4\)
-개발용 컴퓨터 확인
-TCP/IP 3306/33060 , 박스 두개 체크
-mywql system Root pw 관리자 암호 설정 
-sytem / Mbc320!!
-윈도우 서비스 :  next
-서버파일 퍼미션 : next
-샘플 DB : 더미 데이터 2개 체크
-하고 설치 완료
-작업관리자 , 서비스 mysql 실행중 확인
-실행 cmd > mysql : 로그인까지 카톡 사진
-
 
 mysql 설치중 오류가 발생하면 vs code 라이브러리 설치
 구글 검색 : visual c++ 2015 redistributable v14 (vc_redist.x64.exe) 필요
-VC_redist.x64
-https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version
-
 
 mysqls 관련 프로그램을 설치한다.
 https://dev.mysql.com/downloads/workbench/
-mysql-workbench-community-8.0.46-winx64
-따로 설정없이 있는그대로 설치
-local instance 확인  +버튼으로 다른 사람 추가 가능
-instance 클릭해서 암호입력 후 로그인
-mysql워크벤치 설치완료
-
-```
-
-
-
-
 
