@@ -173,6 +173,7 @@ ORDER BY b.created_at DESC;
 
 # WHERE m.name LIKE '%검색어%' OR b.title LIKE '%검색어%'
 
+-- --------------------------------------------------------------------------
 
 drop table items;
 CREATE TABLE items (

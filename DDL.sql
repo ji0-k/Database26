@@ -23,5 +23,130 @@ select * from city; -- city table에 모든 값 가져와
 
 create database initialSQL;
 drop database initialsql;
+-- db생성
 create database initialSQl;
+-- db실행
+use initialsql;
+
+-- table생성
+create table profiles(
+id int auto_increment primary key,
+uid varchar(50) not null unique,
+pw varchar(255) not null,
+name varchar(50) not null,
+role enum('admin', 'manage', 'user') default 'user',
+active boolean default True,
+created_at datetime default current_timestamp
+);
+
+-- data 삽입
+insert into profiles( uid, pw, name, role, active) -- id는 자동입력
+values ('ji0','1234', '김지영', 'admin', true);
+insert into profiles( uid, pw, name, role, active) 
+values ('abc','1234','매니저', 'manage', true);
+
+insert into profiles(uid, pw, name, role, active) 
+values('def','1234', '유저1', 'user', true),
+	  ('ghi','1234', '유저2', 'user', true),
+      ('jkl','1234', '유저3', 'user', true); -- 여러데이터 한번에 삽입 
+
+-- 삽입 데이터 조회 
+select * from profiles;
+
+-- 데이터 수정 : update문으로 id 1의 name 변경
+update profiles set name = '관리자'
+where id = 1;
+
+-- 데이터수정 : update문으로 전체 열에 적용 active-> true/false 처리 
+use initialsql;
+update profiles set active = false;
+update profiles set active = true;
+
+-- error 1175 안전모드 작동중 ,키값 사용하지않고 수정할때 전체 데이터 삭제 방지
+-- 안전 모드 비활성화 쿼리
+SET SQL_SAFE_UPDATES = 0; -- 안전모드 끄고
+SET SQL_SAFE_UPDATES = 1; -- 안전모드 켜고
+
+-- delete문으로 데이터 삭제하기 
+/* delete from 테이블이름 where 열 = 조건 , where절 누락시 전체가 삭제됨*/
+delete from profiles where id = 4; -- id 4번 회원 정보 삭제
+
+-- delete from profiles : delete문으로 table 전체 삭제
+-- truncate table profiles : truncate문으로 대량의 데이터 가장 빠르게 삭제 가능 , but 롤백 불가
+
+-- 되새김문제
+-- , /**/
+create database doit_exam;
+use doit_exam;
+create table doit_exam_t1 (
+id int auto_increment primary key,
+name varchar(50) not null,
+create_date datetime
+);
+
+insert into doit_exam_t1 (name)
+values('강성욱'),
+('이지스퍼블리싱'),
+('doitmysql'); 
+
+select * from doit_exam_t1;
+
+update doit_exam_t1 set name = '출판사' where id = '1' ;
+delete from doit_exam_t1 where id = '5' or id = '6';
+drop table doit_exam_t1;
+drop database doit_exam;
+
+-- ---------------------------------------------------------
+
+
+
+-- 내부조인 inner join 
+/* 기본 형식
+select
+	[열]
+from [테이블1]
+	inner join [테이블2] on [테이블1.열] = [테이블2.열]
+where [검색 조건]
+*/ 
+
+
+
+
+
+
+
+-- 서브쿼리 
+/* 소괄호로 감싼다.
+주쿼리 실행전 1번만 실행된다
+비교연산자 사용 우측 서브쿼리 위치alter
+서브쿼리 내부 order by 사용할 수 없음 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
